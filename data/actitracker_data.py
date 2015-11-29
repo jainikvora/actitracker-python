@@ -13,7 +13,7 @@ class ActitrackerData:
         cursor = conn.cursor()
 
         query = "SELECT mean0, mean1, mean2, variance0, variance1, variance2, avgabsdiff0, avgabsdiff1, " \
-                "avgabsdiff2, resultant, avgtimepeak FROM activity_with_features"
+                "avgabsdiff2, resultant, avgtimepeak FROM activity_with_features_3"
 
         cursor.execute(query)
         columns = tuple([d[0].decode('utf8') for d in cursor.description])
@@ -33,7 +33,7 @@ class ActitrackerData:
             print(err)
             conn.close()
         cursor = conn.cursor()
-        lable_query = "SELECT lable FROM activity_with_features"
+        lable_query = "SELECT lable FROM activity_with_features_3"
 
         cursor.execute(lable_query)
         columns = tuple([d[0].decode('utf8') for d in cursor.description])
